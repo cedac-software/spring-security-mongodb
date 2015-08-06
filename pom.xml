@@ -6,7 +6,7 @@
     <groupId>com.cedac.spring.security</groupId>
     <artifactId>spring-security-mongodb</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>MongoDb for Spring Security</name>
     <description>Module providing Spring Security extensions for MongoDb</description>
