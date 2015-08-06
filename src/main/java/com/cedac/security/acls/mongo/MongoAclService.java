@@ -52,7 +52,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -269,8 +268,14 @@ public class MongoAclService implements AclService, InitializingBean {
         Sid sid = toSid((DBObject) dbo.get(sidFieldName));
         Permission permission = permissionFactory.buildFromMask(Number.class.cast(dbo.get(maskFieldName)).intValue());
         boolean granting = (Boolean) dbo.get(grantingFieldName);
-        boolean auditSuccess = Optional.ofNullable((Boolean) dbo.get(auditSuccessFieldName)).orElse(Boolean.FALSE);
-        boolean auditFailure = Optional.ofNullable((Boolean) dbo.get(auditFailureFieldName)).orElse(Boolean.FALSE);
+        Boolean auditSuccess = (Boolean) dbo.get(auditSuccessFieldName);
+        if (auditSuccess == null) {
+            auditSuccess = Boolean.FALSE;
+        }
+        Boolean auditFailure = (Boolean) dbo.get(auditFailureFieldName);
+        if (auditFailure == null) {
+            auditFailure = Boolean.FALSE;
+        }
         return new AccessControlEntryImpl(id, acl, sid, permission, granting, auditSuccess, auditFailure);
     }
 
