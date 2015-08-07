@@ -1,0 +1,105 @@
+{
+  "acl": [{
+    "objectId": {
+      "class": "com.cedac.smartresidence.profile.domain.Home",
+      "identity": "1"
+    },
+    "parent": null,
+    "owner": {
+      "principal": true,
+      "sid": "admin@cedac.com"
+    },
+    "entriesInheriting": true,
+    "entries": [{
+      "sid": {
+        "principal": false,
+        "sid": "ROLE_ADMIN"
+      },
+      "mask": 1,
+      "granting": true,
+      "auditSuccess": false,
+      "auditFailure": true
+    }, {
+      "sid": {
+        "principal": false,
+        "sid": "ROLE_ADMIN"
+      },
+      "mask": 2,
+      "granting": true,
+      "auditSuccess": false,
+      "auditFailure": true
+    }, {
+      "sid": {
+        "principal": false,
+        "sid": "ROLE_ADMIN"
+      },
+      "mask": 16,
+      "granting": true,
+      "auditSuccess": false,
+      "auditFailure": true
+    }, {
+      "sid": {
+        "principal": true,
+        "sid": "mauro.franceschini@cedac.com"
+      },
+      "mask": 1,
+      "granting": true,
+      "auditSuccess": false,
+      "auditFailure": true
+    }, {
+      "sid": {
+        "principal": true,
+        "sid": "mauro.franceschini@cedac.com"
+      },
+      "mask": 2,
+      "granting": true,
+      "auditSuccess": false,
+      "auditFailure": true
+    }]
+  }, {
+    "objectId": {
+      "class": "com.cedac.smartresidence.profile.domain.Room",
+      "identity": "1.1"
+    },
+    "parent": {
+      "class": "com.cedac.smartresidence.profile.domain.Home",
+      "identity": "1"
+    },
+    "owner": {
+      "principal": true,
+      "sid": "admin@cedac.com"
+    },
+    "entriesInheriting": true,
+    "entries": []
+  }, {
+    "objectId": {
+      "class": "com.cedac.smartresidence.profile.domain.Device",
+      "identity": "1.1.1"
+    },
+    "parent": {
+      "class": "com.cedac.smartresidence.profile.domain.Room",
+      "identity": "1.1"
+    },
+    "owner": {
+      "principal": true,
+      "sid": "admin@cedac.com"
+    },
+    "entriesInheriting": true,
+    "entries": []
+  }, {
+    "objectId": {
+      "class": "com.cedac.smartresidence.profile.domain.Device",
+      "identity": "1.1.2"
+    },
+    "parent": {
+      "class": "com.cedac.smartresidence.profile.domain.Room",
+      "identity": "1.1"
+    },
+    "owner": {
+      "principal": true,
+      "sid": "admin@cedac.com"
+    },
+    "entriesInheriting": true,
+    "entries": []
+  }]
+}
